@@ -1,0 +1,9 @@
+.chapters {
+  font-size: 1.1px;
+  font-family: "Lighthaus";
+  cursor: pointer;
+}
+
+.chapters__item:hover {
+  fill: red;
+}
