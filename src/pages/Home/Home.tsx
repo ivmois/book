@@ -1,19 +1,16 @@
+// ]
 import Background from '../../ lottie/Background';
-import Chapters from '../../components/chapters/Chapters';
+import ChaptersList from '../../components/chapters-list/ChaptersList';
 import Menu from '../../components/menu/Menu';
 import styles from './Home.module.css';
 
-
-
 const Home = () => {
-
-
   return (
     <main className={styles.main}>
-      <Background/>
+      <Background />
       <img className={styles.titleImg} src="/pinatri.png" alt="pinatri" />
       <Menu />
-      <Chapters />
+      <ChaptersList />
       <div className={styles.currentImgs}>
         <img className={styles.currentImgSmall} src="/rings-left.png" alt="rings" />
         <img className={styles.currentImgBig} src="/p3.png" alt="pinatri" />

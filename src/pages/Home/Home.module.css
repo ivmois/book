@@ -10,6 +10,8 @@
 }
 
 .titleImg {
+  position: relative;
+  z-index: 100;
   width: 283px;
   height: 37px;
 }
@@ -40,6 +42,8 @@
 }
 
 .data {
+  position: relative;
+  z-index: 100;
   font-family: 'Wremena';
   font-size: 30px;
 }

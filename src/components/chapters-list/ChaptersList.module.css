@@ -3,9 +3,10 @@
   z-index: 100;
   flex-grow: 1;
   width: 100%;
+  font-size: 6.1px;
 }
 .chapters__text {
-  font-size: 6.1px;
+
   font-family: "Lighthaus";
   cursor: pointer;
   fill: white;
@@ -16,3 +17,5 @@
 .chapters__item:hover {
   fill: red;
 }
+
+
