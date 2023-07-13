@@ -1,7 +1,16 @@
 .chapters {
-  font-size: 1.1px;
+  position: relative;
+  z-index: 100;
+  flex-grow: 1;
+  width: 100%;
+}
+.chapters__text {
+  font-size: 6.1px;
   font-family: "Lighthaus";
   cursor: pointer;
+  fill: white;
+  text-transform: lowercase;
+  letter-spacing: 0.3px;
 }
 
 .chapters__item:hover {

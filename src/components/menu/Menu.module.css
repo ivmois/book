@@ -1,0 +1,23 @@
+.listItem {
+  position: absolute;
+}
+
+.listItem:first-child {
+  top: 40px;
+  left: 40px;
+}
+
+.listItem:nth-child(2) {
+  top: 40px;
+  right: 40px;
+}
+
+.listItem:nth-child(3) {
+  bottom: 40px;
+  left: 40px;
+}
+
+.listItem:last-child {
+  bottom: 40px;
+  right: 40px;
+}

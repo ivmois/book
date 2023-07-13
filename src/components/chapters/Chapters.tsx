@@ -1,107 +1,65 @@
-import { useState, useEffect } from "react";
-import styles from "./Chapters.module.css";
+import { useState, useEffect } from 'react';
+import styles from './Chapters.module.css';
 
 const Chapters = () => {
-  // const [isAnimate, setIsAnimate] = useState(true);
-  const [animateStap, setAnimateStap] = useState(0);
+  const [isAnimate, setIsAnimate] = useState(false);
+  const [animateStep, setAnimateStep] = useState(0);
 
-  // useEffect(() => {
-  //   if (isAnimate) {
-  //     setInterval(() => {
-  //       setAnimateStap((prev) => prev + 0.001);
-  //     }, 1);
-  //   }
-  // }, [isAnimate]);
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | undefined;
 
-  // console.log(animateStap);
+    if (isAnimate) {
+      interval = setInterval(() => {
+        setAnimateStep((prev) => prev + 0.5);
+      }, 40);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [isAnimate]);
+
+  console.log(animateStep);
 
   return (
-    <svg className={styles.chapters} viewBox="0 0 70 70" width="40%">
-      <path d="M35,35m-23,0a23,12 0 1,1 46,0a23,12 0 1,1 -46,0" id="tophalf" />
-
-      <text>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${0 + animateStap}%`}
-        >
-          БРОСАЮЩИЙ КАМНИ ИЛИ КАМНИ САВАОФ
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${24 + animateStap}%`}
-        >
-          КАК Я ЕМ СОБАКУ
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${34 + animateStap}%`}
-        >
-          МОЕ БОГАТСТВО - ЛЮДИ
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${48 + animateStap}%`}
-        >
-          ГЕРОИ БЫТА
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${56 + animateStap}%`}
-        >
-          РАЗНЫЕ НАВСЕГДА
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${67 + animateStap}%`}
-        >
-          НА НОВЕНЬКОГО
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${76 + animateStap}%`}
-        >
-          ПРОДЕЛКИ ПУТЕШЕСТВЕННИКА
-        </textPath>
-        <textPath
-          className={styles.chapters__item}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${93 + animateStap}%`}
-        >
-          МАСЛОВКА
-        </textPath>
-
-        {/* <textPath
-          className={styles.chapters__text}
-          fill="white"
-          xlinkHref="#tophalf"
-          startOffset={`${0 + animateStap}%`}
-        >
-          <a className={styles.chapters__item}>
-            БРОСАЮЩИЙ КАМНИ ИЛИ КАМНИ САВАОФ
-          </a>
-          <a className={styles.chapters__item}> КАК Я ЕМ СОБАКУ </a>
+    <svg
+      className={styles.chapters}
+      width="374.62704mm"
+      height="196.44402mm"
+      viewBox="0 0 374.62706 196.44401"
+      version="1.1"
+      id="svg5"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+    >
+      <path
+        transform="translate(72.969823,-50.277988)"
+        id="tophalf"
+        d="M 266.79664,147.2415 A 154.34746,62.847385 0 0 1 112.44918,210.08889 154.34746,62.847385 0 0 1 -41.898277,147.2415 154.34746,62.847385 0 0 1 112.44918,84.394115 154.34746,62.847385 0 0 1 266.79664,147.2415 Z"
+      />
+      <text className={styles.chapters__text}>
+        <textPath className={styles.chapters__word} fill="white" xlinkHref="#tophalf" startOffset={`${0 + animateStep}%`}>
+          <animate attributeName='startOffset' from='0' to='100%' begin='0s' dur='30s' repeatCount='indefinite'/>
+          <a className={styles.chapters__item}>БРОСАЮЩИЙ КАМНИ ИЛИ КАМНИ САВАОФ</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
+          <a className={styles.chapters__item}>КАК Я ЕМ СОБАКУ</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
           <a className={styles.chapters__item}>МОЕ БОГАТСТВО - ЛЮДИ</a>
-          <a className={styles.chapters__item}> ГЕРОИ БЫТА </a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
+          <a className={styles.chapters__item}>ГЕРОИ БЫТА</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
           <a className={styles.chapters__item}>РАЗНЫЕ НАВСЕГДА</a>
-          <a className={styles.chapters__item}> НА НОВЕНЬКОГО </a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
+          <a className={styles.chapters__item}>НА НОВЕНЬКОГО</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
           <a className={styles.chapters__item}>ПРОДЕЛКИ ПУТЕШЕСТВЕННИКА</a>
-          <a className={styles.chapters__item}> МАСЛОВКА </a>
-        </textPath> */}
+          <tspan className={styles.chapters__dot}> ● </tspan>
+          <a className={styles.chapters__item}>МАСЛОВКА</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
+          <a className={styles.chapters__item}>НЕ ПРО ТО</a>
+          <tspan className={styles.chapters__dot}> ● </tspan>
+        </textPath>
       </text>
     </svg>
   );
